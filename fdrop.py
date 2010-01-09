@@ -7,7 +7,7 @@ def parse_xml(code):
   doc = libxml2.parseDoc(code)
   ctxt = doc.xpathNewContext()
   ctxt.xpathRegisterNs('x', "http://www.w3.org/1999/xhtml")
-  for found in ctxt.xpathEval("//x:div[@class='linkinfo']/x:a"):
+  for found in ctxt.xpathEval("//x:div[@class='linkinfo']/x:p/x:a"):
     print found.getContent()
 
 def drop_file(file):
